@@ -5,16 +5,21 @@ class BinarySearchTree
   attr_accessor :root
 
   def initialize
-    @root = root
+    @root = nil
+  end
+
+  def empty?
+    @root == nil
   end
 
   def insert(score, title)
     node = Node.new(score, title)
     check_root(node)
+
+    node.depth
   end
 
   def check_root(node)
-    # @root = node if @root == nil
     if @root == nil
       @root = node
       @root.depth = 0

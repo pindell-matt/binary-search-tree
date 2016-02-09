@@ -13,6 +13,10 @@ class BinarySearchTreeTest < Minitest::Test
     assert_kind_of BinarySearchTree, @tree
   end
 
+  def test_tree_initializes_as_empty
+    assert @tree.empty?
+  end
+
   def test_tree_initializes_with_root_as_nil
     assert_nil @tree.root
   end
