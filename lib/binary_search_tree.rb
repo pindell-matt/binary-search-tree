@@ -34,21 +34,26 @@ class BinarySearchTree
   end
 
   def left_path_check(current, submitted)
-    current_greater?(current, submitted) && left_link_check(current)
+    current_greater?(current, submitted) && left_link_open?(current)
   end
 
   def current_greater?(current, submitted)
-    #change to be useable for > / <
+    #change to be useable for > / < (based off T/F)
     current.score > submitted.score
   end
 
-  def left_link_check(node)
+  def left_link_open?(node)
     node.left_link.nil?
   end
 
   def left_path_assign(current, submitted)
     submitted.depth += 1
     current.left_link = submitted
+  end
+
+  def repeat_for_left(current, submitted)
+    submitted.depth += 1
+    current = current.left_link
   end
 
   def assign_path(current, submitted)
