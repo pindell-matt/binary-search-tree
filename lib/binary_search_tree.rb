@@ -14,7 +14,6 @@ class BinarySearchTree
 
   def assign_root(node)
     @root = node
-    @root.depth = 0
   end
 
   def insert(score, title)
