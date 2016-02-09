@@ -127,4 +127,30 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal expected, submitted
   end
 
+  def test_include_returns_true_or_false
+    @tree.insert(81, "Jaws")
+    @tree.insert(55, "Neverending Story")
+    @tree.insert(95, "Goodfellas")
+    @tree.insert(15, "Transformers 2")
+    @tree.insert(1, "Lars Von Trier")
+    @tree.insert(90, "Tombstone")
+
+    assert @tree.include?(15)
+    refute @tree.include?(100)
+  end
+
+  def test_sort_returns_array_of_movie_hashes_in_order
+    @tree.insert(81, "Jaws")
+    @tree.insert(55, "Neverending Story")
+    @tree.insert(95, "Goodfellas")
+    @tree.insert(15, "Transformers 2")
+    @tree.insert(90, "Tombstone")
+
+    submitted = @tree.sort
+    expected = [{"Transformers 2"=>15}, {"Neverending Story"=>55},
+                {"Jaws"=>81}, {"Tombstone"=>90}, {"Goodfellas"=>95}]
+
+    assert_equal expected, submitted
+  end
+
 end
