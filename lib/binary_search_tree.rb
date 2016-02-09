@@ -32,14 +32,32 @@ class BinarySearchTree
     end
   end
 
+  def left_path_check(current, submitted)
+    current_greater?(current, submitted) && left_link_check(current)
+  end
+
+  def current_greater?(current, submitted)
+    current.score > submitted.score
+  end
+
+  def left_link_check(node)
+    node.left_link.nil?
+  end
+
+  def left_path_assign(current, submitted)
+    submitted.depth += 1
+    current.left_link = submitted
+  end
+
   def assign_path(current, submitted)
-    if current.score > submitted.score && current.left_link == nil
-      submitted.depth += 1
-      current.left_link = submitted
+    # Left Path
+    if left_path_check(current, submitted)
+      left_path_assign(current, submitted)
     elsif current.score > submitted.score && current.left_link != nil
       submitted.depth += 1
       current = current.left_link
       assign_path(current, submitted)
+    # Right Path
     elsif current.score < submitted.score && current.right_link == nil
       submitted.depth += 1
       current.right_link = submitted
