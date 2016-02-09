@@ -13,4 +13,8 @@ class BinarySearchTreeTest < Minitest::Test
     assert_kind_of BinarySearchTree, @tree
   end
 
+  def test_it_can_insert_node
+    # binding.pry
+  end
+
 end

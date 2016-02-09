@@ -1,7 +1,7 @@
 require 'pry'
 
 class Node
-  attr_reader :score, :title
+  attr_reader :score, :title, :info
   attr_accessor :depth, :left_link, :right_link
 
   def initialize(score, title)
@@ -10,6 +10,7 @@ class Node
     @depth      = depth
     @left_link  = nil
     @right_link = nil
+    @info = { title => score }
   end
 
 end

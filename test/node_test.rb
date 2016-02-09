@@ -30,5 +30,11 @@ class NodeTest < Minitest::Test
     assert_nil @root.depth
   end
 
+  def test_node_returns_info_as_hash
+    expected = {"Jaws" => 81}
+
+    assert_kind_of Hash, @root.info
+    assert_equal expected, @root.info
+  end
 
 end
