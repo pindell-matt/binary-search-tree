@@ -35,9 +35,10 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(55, "Neverending Story")
 
     expected = {"Neverending Story" => 55}
-    submitted = @tree.root.left_link.info
+    submitted = @tree.root.left_link
 
-    assert_equal expected, submitted
+    assert_equal expected, submitted.info
+    assert_equal 1, submitted.depth
   end
 
   def test_insert_can_add_to_left_and_right_link
