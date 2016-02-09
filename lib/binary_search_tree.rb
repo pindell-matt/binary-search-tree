@@ -129,10 +129,11 @@ class BinarySearchTree
 
   def health(depth)
     # find all nodes with matching depth
-    # sort_by depth ?
     sort
-    [[@root.score, @sorted.count, 100]]
-    
+    if depth == 0
+      [[@root.score, @sorted.count, 100]]
+    end
+
   end
 
 end
