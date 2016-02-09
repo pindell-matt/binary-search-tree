@@ -140,12 +140,14 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_sort_returns_array_of_movie_hashes_in_order
-    skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
+    @tree.insert(75, "Deadpool")
     @tree.insert(15, "Transformers 2")
     @tree.insert(90, "Tombstone")
+    binding.pry 
+    @tree.sort
 
     submitted = @tree.sort
     expected = [{"Transformers 2"=>15}, {"Neverending Story"=>55},

@@ -2,10 +2,11 @@ require_relative 'node'
 require 'pry'
 
 class BinarySearchTree
-  attr_accessor :root
+  attr_accessor :root, :sorted
 
   def initialize
     @root = nil
+    @sorted = []
   end
 
   def empty?
@@ -106,15 +107,12 @@ class BinarySearchTree
     search(score).depth
   end
 
-  def sort
-    sorted = []
-    sorted << min
-
-    node = @root
-    until node.left_link.info == min
-      node = node.left_link
+  def inorder(node=@root)
+    if node != nil
+      inorder(node.left_link)
+      @sorted << node.info
+      inorder(node.right_link)
     end
-    sorted << node.info
   end
 
 end
