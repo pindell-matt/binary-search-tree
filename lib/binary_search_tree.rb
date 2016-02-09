@@ -79,7 +79,7 @@ class BinarySearchTree
   end
 
   def include?(score)
-
+    search(score).class == Node
   end
 
   def depth_of(score)
