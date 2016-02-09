@@ -34,6 +34,8 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
 
+    binding.pry
+
     expected = {"Neverending Story" => 55}
     submitted = @tree.min
 

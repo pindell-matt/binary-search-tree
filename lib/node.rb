@@ -7,7 +7,7 @@ class Node
   def initialize(score, title)
     @score      = score
     @title      = title
-    @depth      = depth
+    @depth      = 0
     @left_link  = nil
     @right_link = nil
     @info = { title => score }
