@@ -21,7 +21,7 @@ class BinarySearchTreeTest < Minitest::Test
     assert_nil @tree.root
   end
 
-  def test_it_inserts_first_node_as_root
+  def test_it_inserts_first_node_as_root_and_returns_depth
     @tree.insert(81, "Jaws")
     submitted  = @tree.root
     expected = {"Jaws" => 81}
@@ -30,7 +30,7 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal 0, submitted.depth
   end
 
-  def test_second_inserted_node_begins_tree
+  def test_second_inserted_node_begins_tree_and_returns_depth
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
 
@@ -113,6 +113,15 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal expected, submitted.info
   end
 
+  def test_search_returns_nil_if_no_match
+    @tree.insert(81, "Jaws")
+
+    expected = nil
+    submitted = @tree.search(15)
+
+    assert_equal expected, submitted
+  end
+
   def test_depth_of_returns_depth_of_node
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
@@ -122,6 +131,17 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(90, "Tombstone")
 
     expected = 3
+    submitted = @tree.depth_of(1)
+
+    assert_equal expected, submitted
+  end
+
+  def test_depth_of_returns_nil_with_bad_submission
+    @tree.insert(81, "Jaws")
+    @tree.insert(55, "Neverending Story")
+    @tree.insert(95, "Goodfellas")
+
+    expected = nil
     submitted = @tree.depth_of(1)
 
     assert_equal expected, submitted
@@ -150,7 +170,7 @@ class BinarySearchTreeTest < Minitest::Test
 
     submitted = @tree.sort
     expected = [{"Transformers 2"=>15}, {"Neverending Story"=>55},
-                {"Deadpool" => 75}, {"Jaws"=>81}, {"Tombstone"=>90}, 
+                {"Deadpool" => 75}, {"Jaws"=>81}, {"Tombstone"=>90},
                 {"Goodfellas"=>95}]
 
     assert_equal expected, submitted

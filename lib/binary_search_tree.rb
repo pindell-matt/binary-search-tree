@@ -38,6 +38,7 @@ class BinarySearchTree
   end
 
   def current_greater?(current, submitted)
+    #change to be useable for > / <
     current.score > submitted.score
   end
 
@@ -104,6 +105,7 @@ class BinarySearchTree
   end
 
   def depth_of(score)
+    return nil if search(score) == nil
     search(score).depth
   end
 
