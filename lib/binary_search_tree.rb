@@ -68,4 +68,22 @@ class BinarySearchTree
     node.info
   end
 
+  def search(score, node=@root)
+    if node.score == score
+      node
+    elsif node.score > score
+      search(score, node.left_link)
+    elsif node.score < score
+      search(score, node.right_link)
+    end
+  end
+
+  def include?(score)
+
+  end
+
+  def depth_of(score)
+    search(score).depth
+  end
+
 end

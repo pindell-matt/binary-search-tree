@@ -99,4 +99,32 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal expected, submitted
   end
 
+  def test_search_returns_matching_node
+    @tree.insert(81, "Jaws")
+    @tree.insert(55, "Neverending Story")
+    @tree.insert(95, "Goodfellas")
+    @tree.insert(15, "Transformers 2")
+    @tree.insert(1, "Lars Von Trier")
+    @tree.insert(90, "Tombstone")
+
+    expected = {"Transformers 2" => 15}
+    submitted = @tree.search(15)
+
+    assert_equal expected, submitted.info
+  end
+
+  def test_depth_of_returns_depth_of_node
+    @tree.insert(81, "Jaws")
+    @tree.insert(55, "Neverending Story")
+    @tree.insert(95, "Goodfellas")
+    @tree.insert(15, "Transformers 2")
+    @tree.insert(1, "Lars Von Trier")
+    @tree.insert(90, "Tombstone")
+
+    expected = 3
+    submitted = @tree.depth_of(1)
+
+    assert_equal expected, submitted
+  end
+
 end
