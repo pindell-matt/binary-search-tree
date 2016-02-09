@@ -146,12 +146,12 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(75, "Deadpool")
     @tree.insert(15, "Transformers 2")
     @tree.insert(90, "Tombstone")
-    binding.pry 
-    @tree.sort
+    @tree.inorder
 
     submitted = @tree.sort
     expected = [{"Transformers 2"=>15}, {"Neverending Story"=>55},
-                {"Jaws"=>81}, {"Tombstone"=>90}, {"Goodfellas"=>95}]
+                {"Deadpool" => 75}, {"Jaws"=>81}, {"Tombstone"=>90}, 
+                {"Goodfellas"=>95}]
 
     assert_equal expected, submitted
   end

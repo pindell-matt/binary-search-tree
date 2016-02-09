@@ -115,4 +115,8 @@ class BinarySearchTree
     end
   end
 
+  def sort
+    @sorted
+  end
+
 end
