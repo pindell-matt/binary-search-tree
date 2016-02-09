@@ -50,16 +50,6 @@ class BinarySearchTree
     end
   end
 
-  def search(score, node)
-    if node == nil || node.score == score
-      node
-    elsif score < node.score
-      seach(score, node.left_link)
-    else
-      search(score, node.right_link)
-    end
-  end
-
   def max
     return nil if empty?
     node = @root

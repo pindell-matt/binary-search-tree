@@ -71,4 +71,32 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal expected_right, submitted_right
   end
 
+  def test_max_returns_node_with_highest_score
+    @tree.insert(81, "Jaws")
+    @tree.insert(55, "Neverending Story")
+    @tree.insert(95, "Goodfellas")
+    @tree.insert(15, "Transformers 2")
+    @tree.insert(1, "Lars Von Trier")
+    @tree.insert(90, "Tombstone")
+
+    expected = {"Goodfellas" => 95}
+    submitted = @tree.max
+
+    assert_equal expected, submitted
+  end
+
+  def test_min_returns_node_with_lowest_score
+    @tree.insert(81, "Jaws")
+    @tree.insert(55, "Neverending Story")
+    @tree.insert(95, "Goodfellas")
+    @tree.insert(15, "Transformers 2")
+    @tree.insert(1, "Lars Von Trier")
+    @tree.insert(90, "Tombstone")
+
+    expected = {"Lars Von Trier" => 1}
+    submitted = @tree.min
+
+    assert_equal expected, submitted
+  end
+
 end
