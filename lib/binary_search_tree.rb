@@ -52,7 +52,7 @@ class BinarySearchTree
   end
 
   def assign_path(current, submitted)
-    
+
     # Left Path
     if left_path_check(current, submitted)
       left_path_assign(current, submitted)
@@ -132,7 +132,7 @@ class BinarySearchTree
     # sort_by depth ?
     sort
     [[@root.score, @sorted.count, 100]]
-
+    
   end
 
 end
