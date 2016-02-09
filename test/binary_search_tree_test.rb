@@ -166,12 +166,26 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(75, "Deadpool")
     @tree.insert(15, "Transformers 2")
     @tree.insert(90, "Tombstone")
-    @tree.inorder
 
     submitted = @tree.sort
     expected = [{"Transformers 2"=>15}, {"Neverending Story"=>55},
                 {"Deadpool" => 75}, {"Jaws"=>81}, {"Tombstone"=>90},
                 {"Goodfellas"=>95}]
+
+    assert_equal expected, submitted
+  end
+
+  def test_health_provides_array_of_values
+    @tree.insert(98, "Animals United")
+    @tree.insert(58, "Armageddon")
+    @tree.insert(36, "Bill & Ted's Bogus Journey")
+    @tree.insert(93, "Bill & Ted's Excellent Adventure")
+    @tree.insert(86, "Charlie's Angels")
+    @tree.insert(38, "Charlie's Country")
+    @tree.insert(69, "Collateral Damage")
+
+    submitted = @tree.health(0)
+    expected = [[98, 7, 100]]
 
     assert_equal expected, submitted
   end

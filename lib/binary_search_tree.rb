@@ -118,7 +118,19 @@ class BinarySearchTree
   end
 
   def sort
+    inorder
     @sorted
+  end
+
+  # Score of the node
+  # Total number of child nodes including the current node
+  # Percentage of all the nodes that are this node or it's children
+
+  def health(depth)
+    # find all nodes with matching depth
+    # binding.pry
+    # sort_by depth ?
+
   end
 
 end
