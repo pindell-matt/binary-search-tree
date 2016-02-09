@@ -55,4 +55,20 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal expected_right, submitted_right
   end
 
+  def test_insert_can_add_twice_to_left_and_right_link
+    @tree.insert(81, "Jaws")
+    @tree.insert(55, "Neverending Story")
+    @tree.insert(95, "Goodfellas")
+    @tree.insert(15, "Transformers 2")
+    @tree.insert(90, "Tombstone")
+
+    expected_left   = {"Transformers 2" => 15}
+    submitted_left  = @tree.root.left_link.left_link.info
+    expected_right  = {"Tombstone" => 90}
+    submitted_right = @tree.root.right_link.left_link.info
+
+    assert_equal expected_left, submitted_left
+    assert_equal expected_right, submitted_right
+  end
+
 end
