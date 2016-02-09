@@ -94,9 +94,8 @@ class BinarySearchTree
   end
 
   def search(score, node=@root)
-    if node == nil
-      nil
-    elsif node.score == score
+    return nil if node.nil?
+    if node.score == score
       node
     elsif node.score > score
       search(score, node.left_link)
@@ -133,8 +132,9 @@ class BinarySearchTree
 
   def health(depth)
     # find all nodes with matching depth
-    # binding.pry
     # sort_by depth ?
+    sort
+    [[@root.score, @sorted.count, 100]]
 
   end
 
