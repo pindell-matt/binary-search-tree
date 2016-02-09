@@ -30,4 +30,14 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal 0, submitted.depth
   end
 
+  def test_second_inserted_node_begins_tree
+    @tree.insert(81, "Jaws")
+    @tree.insert(55, "Neverending Story")
+
+    expected = {"Neverending Story" => 55}
+    submitted = @tree.min
+
+    assert_equal expected, submitted
+  end
+
 end
