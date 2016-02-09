@@ -18,14 +18,18 @@ class BinarySearchTree
 
   def insert(score, title)
     node = Node.new(score, title)
+    assignment_path(node)
+    node.depth
+  end
+
+  def assignment_path(node)
     if empty?
       assign_root(node)
-    elsif score > @root.score
+    elsif node.score > @root.score
       assign_right(@root, node)
-    elsif score < @root.score
+    elsif node.score < @root.score
       assign_left(@root, node)
     end
-    node.depth
   end
 
   def assign_left(current, submitted)
