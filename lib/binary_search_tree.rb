@@ -51,12 +51,8 @@ class BinarySearchTree
     current.left_link = submitted
   end
 
-  def repeat_for_left(current, submitted)
-    submitted.depth += 1
-    current = current.left_link
-  end
-
   def assign_path(current, submitted)
+    
     # Left Path
     if left_path_check(current, submitted)
       left_path_assign(current, submitted)
@@ -64,6 +60,7 @@ class BinarySearchTree
       submitted.depth += 1
       current = current.left_link
       assign_path(current, submitted)
+
     # Right Path
     elsif current.score < submitted.score && current.right_link == nil
       submitted.depth += 1
