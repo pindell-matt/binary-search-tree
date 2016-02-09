@@ -37,4 +37,10 @@ class NodeTest < Minitest::Test
     assert_equal expected, @root.info
   end
 
+  def test_node_can_set_second_node_as_left_link
+    left_node = Node.new(35, "Casino")
+    @root.left_link = left_node
+
+    assert_equal left_node, @root.left_link
+  end
 end

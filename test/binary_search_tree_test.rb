@@ -13,8 +13,17 @@ class BinarySearchTreeTest < Minitest::Test
     assert_kind_of BinarySearchTree, @tree
   end
 
-  def test_it_can_insert_node
-    # binding.pry
+  def test_tree_initializes_with_root_as_nil
+    assert_nil @tree.root
+  end
+
+  def test_it_inserts_first_node_as_root
+    @tree.insert(81, "Jaws")
+    submitted  = @tree.root
+    expected = {"Jaws" => 81}
+
+    assert_equal expected, submitted.info
+    assert_equal 0, submitted.depth
   end
 
 end
