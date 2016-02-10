@@ -21,9 +21,9 @@ class NodeTest < Minitest::Test
     assert_equal expected_title, @root.title
   end
 
-  def test_node_initializes_with_left_and_right_links_as_nil
-    assert_nil @root.left_link
-    assert_nil @root.right_link
+  def test_node_initializes_with_left_and_right_nodes_as_nil
+    assert_nil @root.left_node
+    assert_nil @root.right_node
   end
 
   def test_node_initializes_with_depth_as_nil
@@ -37,10 +37,23 @@ class NodeTest < Minitest::Test
     assert_equal expected, @root.info
   end
 
-  def test_node_can_set_second_node_as_left_link
-    left_node = Node.new(35, "Casino")
-    @root.left_link = left_node
+  def test_insert_can_insert_node
+    @root.insert(Node.new(35, "Casino"))
 
-    assert_equal left_node, @root.left_link
+    expected  = {"Casino"=>35}
+    submitted = @root.left_node.info
+
+    assert_equal expected, submitted
+  end
+
+  def test_max_returns_largest_node
+    @root.insert(Node.new(35, "Nope"))
+    @root.insert(Node.new(95, "Casino"))
+    @root.insert(Node.new(15, "Nope 2"))
+
+    expected  = {"Casino"=>95}
+    submitted = @root.max
+
+    assert_equal expected, submitted
   end
 end
