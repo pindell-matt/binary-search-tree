@@ -19,11 +19,7 @@ class BinarySearchTree
 
   def insert(score, title)
     node = Node.new(score, title)
-    if empty?
-      @root = node
-    else
-      @root.insert(node)
-    end
+    empty? ? @root = node : @root.insert(node)
     node.depth
   end
 
