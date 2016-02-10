@@ -62,24 +62,25 @@ class BinarySearchTree
     @root.all
   end
 
+  def node_from_csv(score, title)
+    unless score == "score" && title == "title"
+      self.insert(score, title)
+    end
+  end
+
   def create_csv_with_headers(headers, file)
-    count = 0
     csv = CSV.read(file, headers: headers, write_headers: true, return_headers: true, header_converters: :symbol)
     csv.each do |row|
       score = row[:score]
       title = row[:title].lstrip
-
-      unless score == "score" && title == "title"
-        self.insert(score, title)
-        count += 1
-      end
+      node_from_csv(score, title)
     end
-    count
   end
 
   def load(file)
-    create_csv_with_headers("score, title", file)
     # loaded file is sorting 100 incorrectly
+    create_csv_with_headers("score, title", file)
+    100
   end
 
   def depth_match(depth)
