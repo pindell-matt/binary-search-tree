@@ -55,17 +55,25 @@ class BinarySearchTree
     @root.sort
   end
 
-  def load(file_name)
+  def all
+    return [] if empty?
+    @root.all
+  end
 
+  def load(file_name)
     # return number of movies loaded
   end
 
   def health(depth)
-    sort
-    if depth == 0
-      [[@root.score, @sorted.count, 100]]
+    # node.all.count
+    @root.all.map do |node|
+      all = node.all.count
+      [node.score, all, percentage(node)]
     end
+  end
 
+  def percentage(node)
+    ((node.all.count / (@root.all.count.to_f)).round(2) * 100).round
   end
 
 end

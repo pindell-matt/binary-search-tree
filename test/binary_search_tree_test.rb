@@ -189,7 +189,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_health_provides_array_of_values
-    skip
     @tree.insert(98, "Animals United")
     @tree.insert(58, "Armageddon")
     @tree.insert(36, "Bill & Ted's Bogus Journey")
@@ -197,6 +196,8 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(86, "Charlie's Angels")
     @tree.insert(38, "Charlie's Country")
     @tree.insert(69, "Collateral Damage")
+
+    binding.pry
 
     submitted = @tree.health(0)
     expected = [[98, 7, 100]]
