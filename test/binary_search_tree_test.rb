@@ -38,28 +38,28 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(55, "Neverending Story")
 
     expected = {"Neverending Story" => 55}
-    submitted = @tree.root.left_link
+    submitted = @tree.root.left_node
 
     assert_equal expected, submitted.info
     assert_equal 1, submitted.depth
   end
 
-  def test_insert_can_add_to_left_and_right_link
+  def test_insert_can_add_to_left_and_right_node
     # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
 
     expected_left   = {"Neverending Story" => 55}
-    submitted_left  = @tree.root.left_link.info
+    submitted_left  = @tree.root.left_node.info
     expected_right  = {"Goodfellas" => 95}
-    submitted_right = @tree.root.right_link.info
+    submitted_right = @tree.root.right_node.info
 
     assert_equal expected_left, submitted_left
     assert_equal expected_right, submitted_right
   end
 
-  def test_insert_can_add_twice_to_left_and_right_link
+  def test_insert_can_add_twice_to_left_and_right_node
     # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
@@ -68,9 +68,9 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(90, "Tombstone")
 
     expected_left   = {"Transformers 2" => 15}
-    submitted_left  = @tree.root.left_link.left_link.info
+    submitted_left  = @tree.root.left_node.left_node.info
     expected_right  = {"Tombstone" => 90}
-    submitted_right = @tree.root.right_link.left_link.info
+    submitted_right = @tree.root.right_node.left_node.info
 
     assert_equal expected_left, submitted_left
     assert_equal expected_right, submitted_right
@@ -189,7 +189,7 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_health_provides_array_of_values
-    # skip
+    skip
     @tree.insert(98, "Animals United")
     @tree.insert(58, "Armageddon")
     @tree.insert(36, "Bill & Ted's Bogus Journey")

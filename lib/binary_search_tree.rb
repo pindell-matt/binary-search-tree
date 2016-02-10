@@ -37,19 +37,13 @@ class BinarySearchTree
     @root.min
   end
 
-  def search(score, node=@root)
-    return nil if node.nil?
-    if node.score == score
-      node
-    elsif node.score > score
-      search(score, node.left_link)
-    elsif node.score < score
-      search(score, node.right_link)
-    end
+  def search(score)
+    return nil if empty?
+    @root.search(score)
   end
 
   def include?(score)
-    search(score) ? true : false
+    !!search(score)
   end
 
   def depth_of(score)
@@ -57,17 +51,9 @@ class BinarySearchTree
     search(score).depth
   end
 
-  def inorder(node=@root)
-    if node != nil
-      inorder(node.left_link)
-      @sorted << node.info
-      inorder(node.right_link)
-    end
-  end
-
   def sort
-    inorder
-    @sorted
+    return [] if empty?
+    @root.sort
   end
 
   # Score of the node
