@@ -189,12 +189,29 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_load_can_load_file_as_csv
-    binding.pry 
+    # skip
     @tree.load('./data/movies.txt')
 
+    submitted = @tree.all.count
+    expected  = 100
+
+    submitted_root = @tree.root.info
+    expected_root_info = {"Hannibal Buress: Animal Furnace"=>"71"}
+
+    assert_equal expected, submitted
+    assert_equal expected_root_info, submitted_root
+  end
+
+  def test_load_returns_total_count_of_loaded_nodes
+    # skip
+    submitted = @tree.load('./data/movies.txt')
+    expected  = 100
+
+    assert_equal expected, submitted
   end
 
   def test_health_provides_array_of_values
+    # skip
     @tree.insert(98, "Animals United")
     @tree.insert(58, "Armageddon")
     @tree.insert(36, "Bill & Ted's Bogus Journey")
