@@ -2,11 +2,10 @@ require_relative 'node'
 require 'pry'
 
 class BinarySearchTree
-  attr_accessor :root, :sorted
+  attr_accessor :root
 
   def initialize
     @root = nil
-    @sorted = []
   end
 
   def empty?
