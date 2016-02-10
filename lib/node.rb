@@ -27,27 +27,15 @@ class Node
   end
 
   def insert_right(node)
-    if @right_node.nil?
-      @right_node = node
-    else
-      @right_node.insert(node)
-    end
+    @right_node.nil? ? @right_node = node : @right_node.insert(node)
   end
 
   def max
-    if @right_node.nil?
-      @info
-    else
-      @right_node.max
-    end
+    @right_node.nil? ? @info : @right_node.max
   end
 
   def min
-    if @left_node.nil?
-      @info
-    else
-      @left_node.min
-    end
+    @left_node.nil? ? @info : @left_node.min
   end
 
   def search(a_score)
@@ -60,19 +48,11 @@ class Node
   end
 
   def search_left(a_score)
-    if @left_node.nil?
-      nil
-    else
-      @left_node.search(a_score)
-    end
+    @left_node.nil? ? nil : @left_node.search(a_score)
   end
 
   def search_right(a_score)
-    if @right_node.nil?
-      nil
-    else
-      @right_node.search(a_score)
-    end
+    @right_node.nil? ? nil : @right_node.search(a_score)
   end
 
   def sort
