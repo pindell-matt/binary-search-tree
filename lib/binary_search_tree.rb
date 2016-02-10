@@ -70,12 +70,12 @@ class BinarySearchTree
       title = row[:title].lstrip
       bst.insert(score, title) unless score == "score" && title == "title"
     end
-    binding.pry
+    bst
   end
 
   def load(file)
-    csv = create_csv_with_headers("score, title", file)
-
+    csv_tree = create_csv_with_headers("score, title", file)
+    csv_tree.all.count
     # return number of movies loaded (node.all.count)
   end
 
