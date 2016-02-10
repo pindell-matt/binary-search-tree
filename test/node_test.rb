@@ -27,7 +27,7 @@ class NodeTest < Minitest::Test
   end
 
   def test_node_initializes_with_depth_as_nil
-    assert_nil @root.depth
+    assert_equal 0, @root.depth
   end
 
   def test_node_returns_info_as_hash

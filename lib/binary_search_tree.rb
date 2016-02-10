@@ -19,75 +19,22 @@ class BinarySearchTree
 
   def insert(score, title)
     node = Node.new(score, title)
-    path_from_root(node)
-    node.depth
-  end
-
-  def path_from_root(node)
     if empty?
-      assign_root(node)
-    elsif node.score > @root.score
-      assign_path(@root, node)
-    elsif node.score < @root.score
-      assign_path(@root, node)
+      @root = node
+    else
+      @root.insert(node)
     end
-  end
-
-  def left_path_check(current, submitted)
-    current_greater?(current, submitted) && left_link_open?(current)
-  end
-
-  def current_greater?(current, submitted)
-    #change to be useable for > / < (based off T/F)
-    current.score > submitted.score
-  end
-
-  def left_link_open?(node)
-    node.left_link.nil?
-  end
-
-  def left_path_assign(current, submitted)
-    submitted.depth += 1
-    current.left_link = submitted
-  end
-
-  def assign_path(current, submitted)
-
-    # Left Path
-    if left_path_check(current, submitted)
-      left_path_assign(current, submitted)
-    elsif current.score > submitted.score && current.left_link != nil
-      submitted.depth += 1
-      current = current.left_link
-      assign_path(current, submitted)
-
-    # Right Path
-    elsif current.score < submitted.score && current.right_link == nil
-      submitted.depth += 1
-      current.right_link = submitted
-    elsif current.score < submitted.score && current.right_link != nil
-      submitted.depth += 1
-      current = current.right_link
-      assign_path(current, submitted)
-    end
+    node.depth
   end
 
   def max
     return nil if empty?
-    node = @root
-    until node.right_link.nil?
-      node = node.right_link
-    end
-    node.info
+    @root.max
   end
 
   def min
     return nil if empty?
-    node = @root
-    until node.left_link.nil?
-      node = node.left_link
-    end
-    node.info
+    @root.min
   end
 
   def search(score, node=@root)
