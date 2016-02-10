@@ -197,8 +197,7 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(38, "Charlie's Country")
     @tree.insert(69, "Collateral Damage")
 
-    binding.pry
-
+    binding.pry 
     submitted = @tree.health(0)
     expected = [[98, 7, 100]]
 

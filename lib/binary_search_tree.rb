@@ -64,11 +64,16 @@ class BinarySearchTree
     # return number of movies loaded
   end
 
+  def depth_match(depth)
+    @root.all.find_all do |node|
+      node.depth == depth
+    end
+  end
+
   def health(depth)
-    # node.all.count
-    @root.all.map do |node|
-      all = node.all.count
-      [node.score, all, percentage(node)]
+    matches = depth_match(depth)
+    matches.map do |node|
+      [node.score, node.all.count, percentage(node)]
     end
   end
 
