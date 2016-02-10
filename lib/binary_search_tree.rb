@@ -79,7 +79,6 @@ class BinarySearchTree
 
   def load(file)
     csv = create_csv_with_headers("score, title", file)
-    # binding.pry
     count = 0
     CSV.foreach(file) {|row| count += 1}
     count
