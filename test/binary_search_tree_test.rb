@@ -197,11 +197,18 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(38, "Charlie's Country")
     @tree.insert(69, "Collateral Damage")
 
-    binding.pry 
-    submitted = @tree.health(0)
-    expected = [[98, 7, 100]]
+    depth_0       = @tree.health(0)
+    expected_at_0 = [[98, 7, 100]]
 
-    assert_equal expected, submitted
+    depth_1       = @tree.health(1)
+    expected_at_1 = [[58, 6, 85]]
+
+    depth_2       = @tree.health(2)
+    expected_at_2 = [[36, 2, 28], [93, 3, 42]]
+
+    assert_equal expected_at_0, depth_0
+    assert_equal expected_at_1, depth_1
+    assert_equal expected_at_2, depth_2
   end
 
 end

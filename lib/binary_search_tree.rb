@@ -61,7 +61,10 @@ class BinarySearchTree
   end
 
   def load(file_name)
-    # return number of movies loaded
+    # load as csv
+    # read through each line
+    # => insert node
+    # return number of movies loaded (node.all.count)
   end
 
   def depth_match(depth)
@@ -78,7 +81,7 @@ class BinarySearchTree
   end
 
   def percentage(node)
-    ((node.all.count / (@root.all.count.to_f)).round(2) * 100).round
+    ((node.all.count / (@root.all.count.to_f)) * 100).floor
   end
 
 end
