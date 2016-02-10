@@ -78,9 +78,11 @@ class BinarySearchTree
   end
 
   def load(file)
-    # loaded file is sorting 100 incorrectly
-    create_csv_with_headers("score, title", file)
-    100
+    csv = create_csv_with_headers("score, title", file)
+    # binding.pry
+    count = 0
+    CSV.foreach(file) {|row| count += 1}
+    count
   end
 
   def depth_match(depth)
