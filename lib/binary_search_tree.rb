@@ -70,7 +70,7 @@ class BinarySearchTree
       title = row[:title].lstrip
       bst.insert(score, title) unless score == "score" && title == "title"
     end
-    # binding.pry
+    binding.pry
   end
 
   def load(file)

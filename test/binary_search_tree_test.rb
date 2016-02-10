@@ -189,7 +189,7 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_load_can_load_file_as_csv
-    @tree.load('./lib/movies.txt')
+    @tree.load('./data/movies.txt')
 
   end
 
