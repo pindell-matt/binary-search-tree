@@ -55,12 +55,12 @@ class BinarySearchTree
     @root.sort
   end
 
-  # Score of the node
-  # Total number of child nodes including the current node
-  # Percentage of all the nodes that are this node or it's children
+  def load(file_name)
+
+    # return number of movies loaded
+  end
 
   def health(depth)
-    # find all nodes with matching depth
     sort
     if depth == 0
       [[@root.score, @sorted.count, 100]]
