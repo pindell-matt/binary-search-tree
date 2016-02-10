@@ -17,8 +17,12 @@ class BinarySearchTree
     @root = node
   end
 
+  def create_node(score, title)
+    Node.new(score, title)
+  end
+
   def insert(score, title)
-    node = Node.new(score, title)
+    node = create_node(score, title)
     empty? ? @root = node : @root.insert(node)
     node.depth
   end
