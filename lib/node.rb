@@ -67,7 +67,6 @@ class Node
     @right_node.sort unless @right_node.nil?
   end
 
-
   def all
     [all_left, self, all_right].flatten.compact
   end
@@ -79,6 +78,5 @@ class Node
   def all_right
     @right_node.all unless @right_node.nil?
   end
-
 
 end

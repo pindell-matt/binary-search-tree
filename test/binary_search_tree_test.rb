@@ -188,6 +188,11 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal expected, submitted
   end
 
+  def test_load_can_load_file_as_csv
+    @tree.load('./lib/movies.txt')
+
+  end
+
   def test_health_provides_array_of_values
     @tree.insert(98, "Animals United")
     @tree.insert(58, "Armageddon")

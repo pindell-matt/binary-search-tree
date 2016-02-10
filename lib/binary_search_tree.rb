@@ -1,5 +1,7 @@
-require_relative 'node'
 require 'pry'
+require 'csv'
+# require_relative './data/movies'
+require_relative 'node'
 
 class BinarySearchTree
   attr_accessor :root
@@ -60,10 +62,20 @@ class BinarySearchTree
     @root.all
   end
 
-  def load(file_name)
-    # load as csv
-    # read through each line
-    # => insert node
+  def create_csv_with_headers(headers, file)
+    bst = BinarySearchTree.new
+    csv = CSV.read(file, headers: headers, write_headers: true, return_headers: true, header_converters: :symbol)
+    csv.each do |row|
+      score = row[:score]
+      title = row[:title].lstrip
+      bst.insert(score, title) unless score == "score" && title == "title"
+    end
+    # binding.pry
+  end
+
+  def load(file)
+    csv = create_csv_with_headers("score, title", file)
+
     # return number of movies loaded (node.all.count)
   end
 
