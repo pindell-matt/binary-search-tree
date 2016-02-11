@@ -257,6 +257,8 @@ class BinarySearchTreeTest < Minitest::Test
     submitted = @tree.leaves
     expected = 2
 
+    binding.pry
+
     assert_equal expected, submitted
   end
 

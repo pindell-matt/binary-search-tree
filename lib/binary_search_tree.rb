@@ -63,7 +63,7 @@ class BinarySearchTree
   end
 
   def csv_header_check(score, title)
-    @duplicate_count += 1 if ((score == "score") && (title == "title"))
+    @duplicate_count += 1 if ((score == score) && (title == "title"))
   end
 
   def csv_duplicate_check(score)
@@ -72,7 +72,7 @@ class BinarySearchTree
 
   def node_from_csv(score, title)
     unless csv_header_check(score, title) || csv_duplicate_check(score)
-      self.insert(score.to_i, title)
+      self.insert(score, title)
     end
   end
 
@@ -84,7 +84,7 @@ class BinarySearchTree
   def create_nodes_from_csv(headers, file)
     csv = create_csv_with_headers(headers, file)
     csv.each do |row|
-      score = row[:score]
+      score = row[:score].to_i
       title = row[:title].lstrip
       node_from_csv(score, title)
     end
