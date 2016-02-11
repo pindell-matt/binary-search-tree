@@ -26,7 +26,7 @@ class BinarySearchTreeTest < Minitest::Test
     # skip
     @tree.insert(81, "Jaws")
     submitted  = @tree.root
-    expected = {"Jaws" => 81}
+    expected   = {"Jaws" => 81}
 
     assert_equal expected, submitted.info
     assert_equal 0, submitted.depth
@@ -37,7 +37,7 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
 
-    expected = {"Neverending Story" => 55}
+    expected  = {"Neverending Story" => 55}
     submitted = @tree.root.left_node
 
     assert_equal expected, submitted.info
@@ -85,7 +85,7 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(1, "Lars Von Trier")
     @tree.insert(90, "Tombstone")
 
-    expected = {"Goodfellas" => 95}
+    expected  = {"Goodfellas" => 95}
     submitted = @tree.max
 
     assert_equal expected, submitted
@@ -100,7 +100,7 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(1, "Lars Von Trier")
     @tree.insert(90, "Tombstone")
 
-    expected = {"Lars Von Trier" => 1}
+    expected  = {"Lars Von Trier" => 1}
     submitted = @tree.min
 
     assert_equal expected, submitted
@@ -115,7 +115,7 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(1, "Lars Von Trier")
     @tree.insert(90, "Tombstone")
 
-    expected = {"Transformers 2" => 15}
+    expected  = {"Transformers 2" => 15}
     submitted = @tree.search(15)
 
     assert_equal expected, submitted.info
@@ -125,7 +125,7 @@ class BinarySearchTreeTest < Minitest::Test
     # skip
     @tree.insert(81, "Jaws")
 
-    expected = nil
+    expected  = nil
     submitted = @tree.search(15)
 
     assert_equal expected, submitted
@@ -140,7 +140,7 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(1, "Lars Von Trier")
     @tree.insert(90, "Tombstone")
 
-    expected = 3
+    expected  = 3
     submitted = @tree.depth_of(1)
 
     assert_equal expected, submitted
@@ -152,7 +152,7 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
 
-    expected = nil
+    expected  = nil
     submitted = @tree.depth_of(1)
 
     assert_equal expected, submitted
@@ -181,9 +181,9 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(90, "Tombstone")
 
     submitted = @tree.sort
-    expected = [{"Transformers 2"=>15}, {"Neverending Story"=>55},
-                {"Deadpool" => 75}, {"Jaws"=>81}, {"Tombstone"=>90},
-                {"Goodfellas"=>95}]
+    expected  = [{"Transformers 2"=>15}, {"Neverending Story"=>55},
+                 {"Deadpool" => 75}, {"Jaws"=>81}, {"Tombstone"=>90},
+                 {"Goodfellas"=>95}]
 
     assert_equal expected, submitted
   end
@@ -255,7 +255,7 @@ class BinarySearchTreeTest < Minitest::Test
     @tree.insert(69, "Collateral Damage")
 
     submitted = @tree.leaves
-    expected = 2
+    expected  = 2
 
     assert_equal expected, submitted
   end
