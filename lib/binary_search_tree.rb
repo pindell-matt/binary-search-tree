@@ -92,17 +92,17 @@ class BinarySearchTree
 
   def load(file)
     csv = create_nodes_from_csv("score, title", file)
-    csv.count - @duplicate_count
+    (csv.count - @duplicate_count)
   end
 
-  def depth_match(depth)
+  def all_nodes_at_depth(depth)
     @root.all.find_all do |node|
       node.depth == depth
     end
   end
 
   def health(depth)
-    matches = depth_match(depth)
+    matches = all_nodes_at_depth(depth)
     matches.map do |node|
       [node.score, node.all.count, percentage(node)]
     end
