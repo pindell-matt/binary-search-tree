@@ -109,19 +109,18 @@ class BinarySearchTree
   end
 
   def percentage(node)
-    ((node.all.count / (@root.all.count.to_f)) * 100).floor
+    raw_percentage = (node.all.count / @root.all.count.to_f) * 100
+    raw_percentage.floor
   end
 
   def leaves
-    @root.all.select do |node|
-      node.is_leaf?
-    end.count
+    return 0 if empty?
+    @root.all.select { |node| node.is_leaf? }.count
   end
 
   def height
-    @root.all.max_by do |node|
-      node.depth
-    end.depth
+    return 0 if empty?
+    @root.all.max_by { |node| node.depth }.depth
   end
 
 end
