@@ -79,4 +79,8 @@ class Node
     @right_node.all unless @right_node.nil?
   end
 
+  def is_leaf?
+    @left_node.nil? && @right_node.nil? ? true : false
+  end
+
 end

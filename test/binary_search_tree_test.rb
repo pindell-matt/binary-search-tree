@@ -234,4 +234,20 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal expected_at_2, depth_2
   end
 
+  def test_leaves_returns_count_of_leaf_nodes_on_tree
+    # skip
+    @tree.insert(98, "Animals United")
+    @tree.insert(58, "Armageddon")
+    @tree.insert(36, "Bill & Ted's Bogus Journey")
+    @tree.insert(93, "Bill & Ted's Excellent Adventure")
+    @tree.insert(86, "Charlie's Angels")
+    @tree.insert(38, "Charlie's Country")
+    @tree.insert(69, "Collateral Damage")
+
+    submitted = @tree.leaves
+    expected = 2
+
+    assert_equal expected, submitted
+  end
+
 end

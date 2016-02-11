@@ -104,4 +104,10 @@ class BinarySearchTree
     ((node.all.count / (@root.all.count.to_f)) * 100).floor
   end
 
+  def leaves
+    @root.all.select do |node|
+      node.is_leaf?
+    end.count
+  end
+
 end
