@@ -48,7 +48,7 @@ tree.depth_of(50)
 
 ### `max`
 
-The max method is used to return the highest-ranked film as a hash, using the film's title as the key and it's corresponding score as the value.
+The max method is used to return the highest-ranked film as a hash comprised of the film's title as the key and it's score as the value.
 
 ```ruby
 tree.max
@@ -57,7 +57,7 @@ tree.max
 
 ### `min`
 
-Similarly, the min method can be used to return a hash containing the info of the lowest-ranked film.
+Similarly, the min method can be used to return a hash containing the title and score of the lowest-ranked film.
 
 ```ruby
 tree.min
@@ -66,7 +66,7 @@ tree.min
 
 ### `sort`
 
-The sort method returns an array of all of the elements of the tree, each represented as a hash and sorted in ascending order (lowest-ranked film to highest).
+The sort method returns an array of all of the elements of the tree, each represented as the title-score hash and sorted in ascending order (lowest-ranked film to highest).
 
 ```ruby
 tree.sort
@@ -95,7 +95,7 @@ tree.load('movies.txt')
 # => 26
 ```
 
-If a score is already present in the tree when `load` is called, the load method ignores it.
+The load method will not load any score that is already present in the tree.
 
 ### `health`
 
