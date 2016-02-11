@@ -110,4 +110,10 @@ class BinarySearchTree
     end.count
   end
 
+  def height
+    @root.all.max_by do |node|
+      node.depth
+    end.depth
+  end
+
 end
