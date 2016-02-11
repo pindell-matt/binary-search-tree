@@ -67,7 +67,7 @@ class BinarySearchTree
   end
 
   def csv_duplicate_check(score)
-    @duplicate_count += 1 if self.include?(score.to_i)
+    @duplicate_count += 1 if self.include?(score)
   end
 
   def node_from_csv(score, title)
