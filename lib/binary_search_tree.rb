@@ -64,7 +64,7 @@ class BinarySearchTree
 
   def node_from_csv(score, title)
     unless score == "score" && title == "title"
-      self.insert(score, title)
+      self.insert(score.to_i, title)
     end
   end
 

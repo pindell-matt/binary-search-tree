@@ -196,7 +196,7 @@ class BinarySearchTreeTest < Minitest::Test
     expected  = 100
 
     submitted_root = @tree.root.info
-    expected_root_info = {"Hannibal Buress: Animal Furnace"=>"71"}
+    expected_root_info = {"Hannibal Buress: Animal Furnace"=>71}
 
     assert_equal expected, submitted
     assert_equal expected_root_info, submitted_root
