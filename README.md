@@ -71,9 +71,9 @@ The sort method returns an array of all of the elements of the tree, each repres
 ```ruby
 tree.sort
 # => [{"Transformers 2"=>16},
-#   {"Layer Cake"=>50},
-#   {"Bill & Ted's Excellent Adventure"=>61},
-#  {"Goodfellas"=>92}]
+#     {"Layer Cake"=>50},
+#     {"Bill & Ted's Excellent Adventure"=>61},
+#     {"Goodfellas"=>92}]
 ```
 
 ### `load`
