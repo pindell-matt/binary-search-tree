@@ -1,6 +1,6 @@
 ## Overview
 
-This project uses a Binary Search Tree to organize and store Movies based on an assigned score.
+This project uses a Binary Search Tree to organize and store movie titles based on a (subjective) assigned score.
 
 Below is a breakdown of the methods and example use cases.
 
@@ -37,7 +37,7 @@ tree.include?(72)
 
 ### `depth_of`
 
-Returns the depth of the tree where the submitted score appears. 'nil' is returned if the submitted score does not exist.
+Returns the depth of the tree where the submitted score appears, 'nil' is returned if the submitted score does not exist.
 
 ```ruby
 tree.depth_of(92)
