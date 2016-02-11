@@ -116,5 +116,4 @@ class NodeTest < Minitest::Test
     refute root.is_leaf?
   end
 
-
 end

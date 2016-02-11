@@ -18,12 +18,10 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_tree_initializes_with_root_as_nil
-    # skip
     assert_nil @tree.root
   end
 
   def test_it_inserts_first_node_as_root_and_returns_depth
-    # skip
     @tree.insert(81, "Jaws")
     submitted  = @tree.root
     expected   = {"Jaws" => 81}
@@ -33,7 +31,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_second_inserted_node_begins_tree_and_returns_depth
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
 
@@ -45,7 +42,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_insert_can_add_to_left_and_right_node
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
@@ -60,7 +56,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_insert_can_add_twice_to_left_and_right_node
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
@@ -77,7 +72,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_max_returns_node_with_highest_score
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
@@ -92,7 +86,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_min_returns_node_with_lowest_score
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
@@ -107,7 +100,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_search_returns_matching_node
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
@@ -122,7 +114,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_search_returns_nil_if_no_match
-    # skip
     @tree.insert(81, "Jaws")
 
     expected  = nil
@@ -132,7 +123,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_depth_of_returns_depth_of_node
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
@@ -147,7 +137,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_depth_of_returns_nil_with_bad_submission
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
@@ -159,7 +148,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_include_returns_true_or_false
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
@@ -172,7 +160,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_sort_returns_array_of_movie_hashes_in_order
-    # skip
     @tree.insert(81, "Jaws")
     @tree.insert(55, "Neverending Story")
     @tree.insert(95, "Goodfellas")
@@ -189,7 +176,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_load_can_load_file_as_csv
-    # skip
     @tree.load('./data/movies.txt')
 
     submitted = @tree.all.count
@@ -203,7 +189,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_load_rejects_duplicate
-    # skip
     @tree.insert(71,"Hannibal Buress")
 
     submitted = @tree.load('./data/movies.txt')
@@ -213,7 +198,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_load_returns_total_count_of_loaded_nodes
-    # skip
     submitted = @tree.load('./data/movies.txt')
     expected  = 100
 
@@ -221,7 +205,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_health_provides_array_of_values
-    # skip
     @tree.insert(98, "Animals United")
     @tree.insert(58, "Armageddon")
     @tree.insert(36, "Bill & Ted's Bogus Journey")
@@ -245,7 +228,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_leaves_returns_count_of_leaf_nodes_on_tree
-    # skip
     @tree.insert(98, "Animals United")
     @tree.insert(58, "Armageddon")
     @tree.insert(36, "Bill & Ted's Bogus Journey")
@@ -261,7 +243,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_leaves_returns_0_if_tree_empty
-    # skip
     submitted = @tree.leaves
     expected  = 0
 
@@ -269,7 +250,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_height_returns_largest_depth_in_tree
-    # skip
     @tree.insert(98, "Animals United")
     @tree.insert(58, "Armageddon")
     @tree.insert(36, "Bill & Ted's Bogus Journey")
@@ -285,7 +265,6 @@ class BinarySearchTreeTest < Minitest::Test
   end
 
   def test_height_returns_0_if_tree_empty
-    # skip
     submitted = @tree.height
     expected  = 0
 
