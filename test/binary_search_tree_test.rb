@@ -260,4 +260,36 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal expected, submitted
   end
 
+  def test_leaves_returns_0_if_tree_empty
+    # skip
+    submitted = @tree.leaves
+    expected  = 0
+
+    assert_equal expected, submitted
+  end
+
+  def test_height_returns_largest_depth_in_tree
+    # skip
+    @tree.insert(98, "Animals United")
+    @tree.insert(58, "Armageddon")
+    @tree.insert(36, "Bill & Ted's Bogus Journey")
+    @tree.insert(93, "Bill & Ted's Excellent Adventure")
+    @tree.insert(86, "Charlie's Angels")
+    @tree.insert(38, "Charlie's Country")
+    @tree.insert(69, "Collateral Damage")
+
+    submitted = @tree.height
+    expected  = 4
+
+    assert_equal expected, submitted
+  end
+
+  def test_height_returns_0_if_tree_empty
+    # skip
+    submitted = @tree.height
+    expected  = 0
+
+    assert_equal expected, submitted
+  end
+
 end
