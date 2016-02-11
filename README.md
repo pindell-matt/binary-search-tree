@@ -37,7 +37,7 @@ tree.include?(72)
 
 ### `depth_of`
 
-Returns the depth of the tree where the submitted score appears. Nil is returned if the submitted score doesn't exist.
+Returns the depth of the tree where the submitted score appears. 'nil' is returned if the submitted score does not exist.
 
 ```ruby
 tree.depth_of(92)
