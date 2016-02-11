@@ -209,7 +209,7 @@ class BinarySearchTreeTest < Minitest::Test
     submitted = @tree.load('./data/movies.txt')
     expected  = 99
 
-    binding.pry
+    # binding.pry
 
     assert_equal expected, submitted
   end

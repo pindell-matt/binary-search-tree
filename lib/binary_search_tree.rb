@@ -3,10 +3,11 @@ require 'csv'
 require_relative 'node'
 
 class BinarySearchTree
-  attr_accessor :root
+  attr_accessor :root, :duplicate_count
 
   def initialize
     @root = nil
+    @duplicate_count = 0
   end
 
   def empty?
@@ -61,8 +62,22 @@ class BinarySearchTree
     @root.all
   end
 
+  def csv_header_check(score, title)
+    if score == "score" && title == "title"
+      @duplicate_count += 1
+      return true
+    end
+  end
+
+  def csv_duplicate_check(score)
+    if self.include?(score.to_i)
+      @duplicate_count += 1
+      return true
+    end
+  end
+
   def node_from_csv(score, title)
-    unless score == "score" && title == "title" || self.include?(score.to_i)
+    unless csv_header_check(score, title) || csv_duplicate_check(score)
       self.insert(score.to_i, title)
     end
   end
@@ -83,7 +98,7 @@ class BinarySearchTree
 
   def load(file)
     csv = create_nodes_from_csv("score, title", file)
-    csv.count - 1
+    csv.count - @duplicate_count
   end
 
   def depth_match(depth)
