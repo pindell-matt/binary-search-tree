@@ -104,5 +104,17 @@ class NodeTest < Minitest::Test
     assert_kind_of Array, @root.all
   end
 
+  def test_is_leaf
+    @root.insert(Node.new(35, "Nope"))
+    @root.insert(Node.new(95, "Casino"))
+    @root.insert(Node.new(15, "Nope 2"))
+
+    leaf = @root.all.last
+    root = @root
+
+    assert leaf.is_leaf?
+    refute root.is_leaf?
+  end
+
 
 end
