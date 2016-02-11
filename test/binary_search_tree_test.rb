@@ -202,6 +202,18 @@ class BinarySearchTreeTest < Minitest::Test
     assert_equal expected_root_info, submitted_root
   end
 
+  def test_load_can_rejects_duplicate
+    # skip
+    @tree.insert(71,"Hannibal Buress")
+
+    submitted = @tree.load('./data/movies.txt')
+    expected  = 99
+
+    binding.pry
+
+    assert_equal expected, submitted
+  end
+
   def test_load_returns_total_count_of_loaded_nodes
     # skip
     submitted = @tree.load('./data/movies.txt')

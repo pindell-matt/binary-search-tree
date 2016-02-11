@@ -1,6 +1,5 @@
 require 'pry'
 require 'csv'
-# require_relative './data/movies'
 require_relative 'node'
 
 class BinarySearchTree
@@ -63,7 +62,7 @@ class BinarySearchTree
   end
 
   def node_from_csv(score, title)
-    unless score == "score" && title == "title"
+    unless score == "score" && title == "title" || self.include?(score.to_i)
       self.insert(score.to_i, title)
     end
   end
