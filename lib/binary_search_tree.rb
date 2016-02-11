@@ -96,9 +96,7 @@ class BinarySearchTree
   end
 
   def all_nodes_at_depth(depth)
-    @root.all.find_all do |node|
-      node.depth == depth
-    end
+    @root.all.find_all { |node| node.depth == depth }
   end
 
   def health(depth)
