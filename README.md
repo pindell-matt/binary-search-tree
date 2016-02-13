@@ -114,9 +114,27 @@ tree.insert(86, "Charlie's Angels")
 tree.insert(38, "Charlie's Country")
 tree.insert(69, "Collateral Damage")
 tree.health(0)
-=> [[98, 7, 100]]
+# => [[98, 7, 100]]
 tree.health(1)
-=> [[58, 6, 85]]
+# => [[58, 6, 85]]
 tree.health(2)
-=> [[36, 2, 28], [93, 3, 42]]
+# => [[36, 2, 28], [93, 3, 42]]
+```
+
+#### `leaves`
+
+This method returns to the total count of nodes that have no left or right values.
+
+```ruby
+tree.leaves
+# => 2
+```
+
+#### `height`
+
+This method returns the maximum depth of the tree.
+
+```ruby
+tree.height
+# => 3
 ```
